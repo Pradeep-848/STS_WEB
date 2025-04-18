@@ -1,0 +1,122 @@
+.catering-container {
+  padding: 40px 20px;
+  background: #fff7f9;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
+.menu-title {
+  font-size: 2.5rem;
+  color: #bfa76a;
+  margin-bottom: 40px;
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px; 
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Flip Card Wrapper */
+.flip-card {
+  background: transparent;
+  width: 280px;
+  height: 300px;
+  perspective: 1000px;
+  margin-bottom: 30px; 
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Common Styles */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Front Side */
+.flip-card-front {
+  background-color: #ffffff;
+  color: #bfa76a;
+}
+
+.menu-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.flip-card-front h3 {
+  font-size: 1.5rem;
+  color: #777777;
+}
+
+/* Back Side */
+.flip-card-back {
+  background-color: #bfa76a;
+  color: white;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+.flip-card-back h3 {
+  margin-bottom: 10px;
+}
+
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.flip-card-back li {
+  margin: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    gap: 20px;
+  }
+  .flip-card {
+    width: 90%; 
+    max-width: 350px; 
+    height: auto; 
+    margin-bottom: 20px;
+  }
+  .flip-card-inner {
+    height: auto; 
+  }
+  .flip-card-front,
+  .flip-card-back {
+    position: relative; 
+    height: auto; 
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(0deg); 
+  }
+}
